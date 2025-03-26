@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // width: 100%;
+
+    margin-bottom: 10px;
+
+    // position: fixed;
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        gap: 31px ;
+
+        height: 100%;
+
+        margin: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .icon {
+        fill: black;
+    }
+}

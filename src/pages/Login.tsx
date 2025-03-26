@@ -1,16 +1,11 @@
-import { FormControl, InputGroup } from 'react-bootstrap'
+// import NavigationBar from '../container/NavigationBar'
 
 
 function Login() {
     return (
-        <InputGroup className='mb-3'>
-            <InputGroup.Text id='basic-addon1'>@</InputGroup.Text>
-            <FormControl 
-            placeholder='Nome'
-            aria-label='Nome'
-            aria-describedby='basic-addon1'
-            ></FormControl>
-        </InputGroup>
+        <div>
+            <h1>Login</h1>
+        </div>
     )
 }
 
