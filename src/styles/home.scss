@@ -6,22 +6,32 @@
 
     width: 100%;
 
-    img {
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    .containerImg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 100%;
+
+        margin-top: 30px;
+
+        img {
+            min-width: 300px;
+            width: 100%;
+            max-width: 1189px;
+            
+    
+        }
     }
-}
-
-.cardContainer {
-    display: flex;
-    justify-content: center;
-
-    gap: 10px;
-
-    padding: 10px;
-
     
 
-    border-radius: 5px;
+    .width {
+        max-width: 1100px;
 
-    flex-wrap: wrap;
+        margin: auto;
+    }
 }

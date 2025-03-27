@@ -1,14 +1,11 @@
 import NavigationBar from '../container/NavigationBar'
 import Input from '../container/Input'
 import Card from '../container/Card'
+import Footer from '../container/Footer'
+
+import {arrayEmphasis} from '../assets/productStore'
 
 import '../styles/home.scss'
-
-const arrayDestaque = [
-    { title: "Café em Pó Tradicional 500g", price: 36.90, img: "./image 216.png" },
-    { title: "Nike Nike Vomero 18", price: 199, img: "" },
-    { title: "Chuteira Nike Phantom GX II", price: 123, img: "" },
-]
 
 function Home () {
     return (
@@ -19,13 +16,18 @@ function Home () {
             </div>
             
             
-            <div>
-                <img src="./template.png" alt="Tênis Nike" />
+            <div className='containerImg'>
+                <img src="./capa.png" alt="Real Café" />
             </div>
-            <div>
+            <div className='width'>
                 <h2>Destaque</h2>
-                <Card array={arrayDestaque} />
+                <Card array={arrayEmphasis} />
             </div>
+            <div className='width'>
+                <h2>Ofertas</h2>
+                <Card array={arrayEmphasis} />
+            </div>
+            <Footer />
         </div>
     )
 }

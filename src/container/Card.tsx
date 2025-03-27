@@ -22,7 +22,7 @@ function Card({array}: CardProps) {
                 </div>
                         ))
                     ) : (
-                        <p>Nnehum produto encontrado.</p>
+                        <p>Nenhum produto encontrado.</p>
                     )}
                 </div>
     )

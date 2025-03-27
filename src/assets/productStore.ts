@@ -1,16 +1,39 @@
-export const productStore: {title: string, price: number}[] = [
-    {
-        // img: 'https://static.nike.com/a/images/t_PDP_1',
-        title: 'Nike W Air Max Dia Se Qs',
-        price: 100
-    }, 
-    {
-        title: 'Nike 2',
-        price: 199
-    }, 
-    {
-        title: 'Nike 3',
-        price: 123
-    }
+import { ProductType } from "./types"
+
+export const allProducts: ProductType[] = [
+    { 
+        title: "Café Real Coffee Tradicional Grão 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Tradicional Moído 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Tradicional Torrado E Moído Aroma De Caramelo 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Extra Forte Moído 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
 ]
 
+export const arrayEmphasis = [
+    { 
+        title: "Café Real Coffee Tradicional Grão 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Tradicional Moído 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Tradicional Torrado E Moído Aroma De Caramelo 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+    { 
+        title: "Café Real Coffee Extra Forte Moído 500g", 
+        price: 36.90, img: "./coffee.png" 
+    },
+]

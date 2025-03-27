@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { PiHouseSimpleBold as Home, PiShoppingBagBold as Bag, PiUserBold as User } from 'react-icons/pi'
 
 import '../styles/navbar.scss'
+import Input from './Input'
 
 function NavigationBar() {
     return (
@@ -11,7 +12,9 @@ function NavigationBar() {
                     <Home size={25} className='icon' />
                 </Link>
             </div>
-            <div>
+                
+            <div className='links'>
+                <Input />
                 <ul>
                     <li><Link to='/bag'>
                         <Bag size={25} className='icon' />

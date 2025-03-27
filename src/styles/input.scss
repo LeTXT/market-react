@@ -4,7 +4,6 @@
     align-items: center;
     gap: 5px;
 
-    // width: 100%;
     height: 40px;
 
     padding: 0 10px;
@@ -13,6 +12,8 @@
     border-radius: 5px;
 
     box-sizing: border-box;
+
+    display: none;
 
     form {
         width: 100%;
@@ -51,4 +52,10 @@
         }
     }
  
+}
+
+@media (max-width: 768px) {
+    .input {
+        display: flex;
+    }
 }
