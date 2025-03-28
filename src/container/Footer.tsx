@@ -1,4 +1,27 @@
+import { PiLinkedinLogoBold as Linkedin, PiGithubLogoBold as Github } from 'react-icons/pi'
+
 import '../styles/footer.scss'
+
+const array = [
+    {
+        icon: Linkedin, 
+        fill: '#0A66C2',
+        title: 'Linkedin',
+        link: 'https://www.linkedin.com/in/leandrogdo/'
+    },
+    {
+        icon: Github, 
+        fill: 'blue',
+        title: 'Github',
+        link: 'https://github.com/LeTXT'
+    },
+    {
+        icon: Linkedin, 
+        fill: 'blue',
+        title: 'Linkedin',
+        link: 'https://www.linkedin.com/in/leandrogdo/'
+    }
+]
 
 function Footer() {
     return (
@@ -10,8 +33,18 @@ function Footer() {
                     
                 </div>
                 <div>
-                    <p>Atendimento</p>
-                    <a href=""></a>
+                    <p>ATENDIMENTO</p>
+                    <div className='iconContainer'>{
+                        array.map((item, index) => {
+                            return (
+                                <div key={index} className='icon'>
+                                    <a href={item.link} target="_blank" >
+                                        <item.icon size={24} fill={item.fill} />
+                                    </a>
+                                </div>
+                            )
+                        })
+                    }</div>
                 </div>
             </div>
 

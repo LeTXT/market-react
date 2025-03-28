@@ -3,14 +3,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    flex-wrap: wrap;
     width: 100%;
 
     
 
     .aboutUsAndContact {
         display: flex;
-        justify-content: center;
-        
+        justify-content: space-around;
+        align-items: start;
+
+        flex-wrap: wrap;   
 
         width: 100%;
 
@@ -18,13 +22,33 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: clamp(375px, 100%, 500px);
+
+            gap: 10px;
+            
+            width: 300px;
             
             p {
                 font-size: 12px;
                 text-align: center;
             }
         }
+
+        .iconContainer {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .icon {
+                
+            }
+        }
+    }
+
+}
+
+@media (min-width: 768px) {
+    .aboutUs {
+        width: 100%;
     }
 
 }

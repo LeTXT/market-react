@@ -10,11 +10,9 @@ import '../styles/home.scss'
 function Home () {
     return (
         <div className='home'>
-            <div>
-                <NavigationBar />
-                <Input />
-            </div>
             
+            <NavigationBar />
+            <Input />
             
             <div className='containerImg'>
                 <img src="./capa.png" alt="Real Café" />
@@ -27,6 +25,7 @@ function Home () {
                 <h2>Ofertas</h2>
                 <Card array={arrayEmphasis} />
             </div>
+
             <Footer />
         </div>
     )

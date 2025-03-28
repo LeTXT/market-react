@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
 
+    width: 100%;
+
     gap: 10px;
 
     flex-wrap: wrap;
@@ -11,7 +13,7 @@
         flex-direction: column;
         align-items: center;
         
-        width: clamp(150px, calc(50% - 5px), 200px);
+        width: 165px;
         height: 310px;
     
         padding: 16px;
@@ -58,9 +60,11 @@
         0px 2px 5px rgba(0, 0, 0, 0.1);
 
         .title {
+            max-height: 62px;
+            
             max-width: none;
-            overflow: auto;
-            text-overflow: clip;
+            overflow: hidden;
+            text-overflow: ellipsis;
             white-space: wrap;
         }
     }
