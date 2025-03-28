@@ -1,8 +1,10 @@
+@use '../abstracts/' as *;
+
+
 .footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(column);
+
+    gap: 30px;
 
     flex-wrap: wrap;
     width: 100%;
@@ -10,18 +12,14 @@
     
 
     .aboutUsAndContact {
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
+        @include flex(row, space-between, start);
 
         flex-wrap: wrap;   
 
         width: 100%;
 
         .aboutUs {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            @include flex(column);  
 
             gap: 10px;
             
@@ -32,15 +30,40 @@
                 text-align: center;
             }
         }
+        .contact {
+            p {
+                color: #D1603D;
+            }
+        }
 
         .iconContainer {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
+            @include flex(row, space-between, center);
+
+
+            gap: 20px;
 
             .icon {
-                
+                transition: all 0.2s ease-in-out;
+                cursor: pointer;
             }
+
+            .icon:hover {
+                opacity: 0.8;
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .developmentContainer {
+        @include flex(column);
+
+        
+        width: 100%;
+        
+        .development {
+            @include flex(row, space-between);
+
+            width: 100%;
         }
     }
 

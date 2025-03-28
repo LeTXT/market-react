@@ -1,8 +1,7 @@
+@use '../abstracts/' as *;
+
 .navbar {
-    display: flex;
-    
-    align-items: center;
-    justify-content: space-between;
+    @include flex(row, space-between);
 
     margin-bottom: 10px;
     max-width: 1293px;
@@ -11,8 +10,7 @@
     
 
     ul {
-        display: flex;
-        align-items: center;
+        @include flex();
 
         gap: 31px ;
 
@@ -28,12 +26,12 @@
     .icon {
         fill: black;
     }
+    .icon:hover {
+        opacity: 0.8;
+    }
 
     .links {
-        display: flex;
-        align-items: center;
-
-        justify-content: space-between;
+        @include flex(row, space-between);
     }
 
     .input {

@@ -1,4 +1,5 @@
 import { PiLinkedinLogoBold as Linkedin, PiGithubLogoBold as Github } from 'react-icons/pi'
+import { SiGmail as Gmail } from "react-icons/si";
 
 import '../styles/footer.scss'
 
@@ -11,15 +12,15 @@ const array = [
     },
     {
         icon: Github, 
-        fill: 'blue',
+        fill: '#000000',
         title: 'Github',
         link: 'https://github.com/LeTXT'
     },
     {
-        icon: Linkedin, 
-        fill: 'blue',
-        title: 'Linkedin',
-        link: 'https://www.linkedin.com/in/leandrogdo/'
+        icon: Gmail, 
+        fill: '#EA4335',
+        title: 'Gmail',
+        link: 'https://mail.google.com/mail/?view=cm&to=leandrog.oliveiracontact@gmail.com&su=Contato&body=Olá,%20gostaria%20de%20falar%20com%20você.'
     }
 ]
 
@@ -32,7 +33,7 @@ function Footer() {
                     <p>Na Real Caffee, prezamos pela qualidade e autenticidade do verdadeiro café especial. Nossos grãos são cultivados em regiões nobres, com terroir ideal para o desenvolvimento de aromas e sabores únicos. Cada etapa do processo, do plantio à torra, é cuidadosamente controlada para garantir um café puro, sem blends, preservando sua identidade e sofisticação.</p>
                     
                 </div>
-                <div>
+                <div className='contact'>
                     <p>ATENDIMENTO</p>
                     <div className='iconContainer'>{
                         array.map((item, index) => {
@@ -45,17 +46,6 @@ function Footer() {
                             )
                         })
                     }</div>
-                </div>
-            </div>
-
-            <div className='paymentAndDeveloper'>
-                <div className='paymentMethods'>
-                    <p>Formas de pagamento</p>
-                    <p>nenhuma</p>
-                </div>
-                <div>
-                    <p>Desenvolvido por</p>
-                    <p>Leandro e Anelim</p>
                 </div>
             </div>
             

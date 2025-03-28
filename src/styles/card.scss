@@ -1,6 +1,7 @@
+@use '../abstracts/' as *;
+
 .cardContainer {
-    display: flex;
-    justify-content: center;
+    @include flex();
 
     width: 100%;
 
@@ -9,9 +10,8 @@
     flex-wrap: wrap;
 
     .card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex(column);
+
         
         width: 165px;
         height: 310px;

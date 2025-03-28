@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.products {
-    @include flex();
+.bag {
+    @include flex(column);
     @include spacing();
 }

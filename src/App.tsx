@@ -7,7 +7,7 @@ import Products from './pages/Products'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='market-react/'>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
