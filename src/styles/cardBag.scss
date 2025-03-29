@@ -1,0 +1,58 @@
+@use '../abstracts/' as *;
+
+.cardBag {
+    width: 100%;
+
+    .cardBagItem {
+        @include flex(row, center, start);
+
+        .removeItem {
+            
+            button {
+                border: none;
+                
+                opacity: .7;
+            }
+
+        }
+    }
+    .imgContainer {
+        width: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .quantity {
+        @include flex(row, start);
+
+        input {
+            text-align: center;
+            border: none;
+
+            width: 25px;
+
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        button {
+
+            width: 30px;
+            height: 30px;
+
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: 700;
+            
+            padding-bottom: 4px;
+
+            transition: opacity 0.3s;
+        }
+        button:disabled {
+            opacity: 0.5;
+        }
+        
+    }
+}

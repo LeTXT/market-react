@@ -7,8 +7,6 @@
     max-width: 1293px;
     width: 100%;
 
-    
-
     ul {
         @include flex();
 
@@ -20,6 +18,12 @@
 
         li {
             list-style: none;
+
+            button {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
         }
     }
 

@@ -3,13 +3,11 @@
 
 .footer {
     @include flex(column);
+    @include spacing();
 
     gap: 30px;
 
     flex-wrap: wrap;
-    width: 100%;
-
-    
 
     .aboutUsAndContact {
         @include flex(row, space-between, start);

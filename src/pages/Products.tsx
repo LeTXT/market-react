@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { ProductType } from '../assets/types'
 
-import NavigationBar from '../container/NavigationBar'
-import Input from '../container/Input'
-import Card from '../container/Card'
+import NavigationBar from '../components/NavigationBar'
+import Input from '../components/Input'
+import Card from '../components/Card'
 
 import { allProducts } from '../assets/productStore'
 

@@ -1,7 +1,7 @@
-import NavigationBar from '../container/NavigationBar'
-import Input from '../container/Input'
-import Card from '../container/Card'
-import Footer from '../container/Footer'
+import NavigationBar from '../components/NavigationBar'
+import Input from '../components/Input'
+import Card from '../components/Card'
+import Footer from '../components/Footer'
 
 import {arrayEmphasis} from '../assets/productStore'
 
@@ -13,6 +13,7 @@ function Home () {
             
             <NavigationBar />
             <Input />
+          
             
             <div className='containerImg'>
                 <img src="./capa.png" alt="Real Café" />
