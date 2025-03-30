@@ -1,6 +1,4 @@
-
-// import { useState } from 'react'
-import useBag from '../hooks/useBag'
+import { useBag } from '../hooks/useBag'
 
 import CardBag from '../components/CardBag'
 
@@ -16,14 +14,7 @@ interface BagProps {
 }
 
 function Bag ({state, setState}: BagProps) {
-    // const [totalPrice, setTotalPrice] = useState(0)
     const { bagItems, getTotalPrice } = useBag()
-
-
-    // const calculateTotal = (items: { price: number, quantity: number }[]) => {
-    //     const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
-    //     setTotalPrice(total)
-    // }
 
     return (
         <div className='bag'>

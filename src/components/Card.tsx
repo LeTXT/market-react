@@ -1,8 +1,6 @@
-import useBag from '../hooks/useBag'
+import { useBag } from '../hooks/useBag'
 
 import { ProductType } from '../assets/types'
-
-// import { addProductToBag } from '../utils/addProductToBag'
 
 import '../styles/card.scss'
 
@@ -39,5 +37,3 @@ function Card({array}: CardProps) {
 }
 
 export default Card
-
-// addProductToBag(array[index], setQuantity)

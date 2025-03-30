@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PiHouseSimpleBold as Home, PiShoppingBagBold as BagIcon, PiUserBold as User } from 'react-icons/pi'
 
-import useBag from '../hooks/useBag'
+import { useBag } from '../hooks/useBag'
 
 import { onOff} from '../utils/showBag'
 
