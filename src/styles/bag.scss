@@ -12,10 +12,14 @@
 
     .totalContainer {
         @include flex(column);
+        @include border-top();
+
+        margin-top: 20px;
 
         gap: 10px;
 
         width: 100%;
+
         .total {
             @include flex(row, space-between);
     
@@ -46,7 +50,41 @@
             font-weight: 700;
         }
     }
-    
+    .header {
+        @include flex(row, start);
+
+        width: 100%;
+
+        gap: 30px;
+
+        .bagQuantity {
+            @include flex(column, center, start);
+            
+            p {
+                margin: 0;
+
+                text-align: start;
+            }
+            p:first-child {
+                font-size: 20px;
+                font-weight: 700;
+            }
+
+            .pharagraph {
+                @include flex(row, start);
+                
+                gap: 5px;
+
+                p:first-child {
+                    font-weight: 600;
+
+                    color: #D1603D;
+                }
+            }
+        }
+
+        
+    }
 
 }
 
@@ -68,6 +106,8 @@
     transition: right 0.4s ease-in-out;
 
     z-index: 3;
+
+    overflow: auto;
 
     button {
         @include flex();
@@ -114,4 +154,13 @@
 
     opacity: 1;
     transition: opacity 0.7s ease-in-out;
+}
+
+@media (max-width: 400px) {
+    .bag-content {
+        width: 100%;
+    }
+    .bg-grey {
+        display: none;
+    }
 }

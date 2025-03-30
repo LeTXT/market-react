@@ -11,61 +11,100 @@
 
     .card {
         @include flex(column);
-
-        
-        width: 165px;
-        height: 310px;
-    
+  
         padding: 16px;
-    
-        box-sizing: border-box;
-    
-        border-radius: 5px;
-    
-        transition: all 0.2s ease-in-out;
-    
+
+        width: 317px;
+
         cursor: pointer;
-    
-        .widthContainer {
-            width: 100%;
-        }
+
+        transition: all 0.2s ease-in-out;
+
+        border-radius: 5px;
+
         .imgContainer {
             width: 100%;
-            height: 152px;
-    
+
             img {
                 width: 100%;
-                height: 100%;
-                object-fit: contain;
-                
             }
-        }
-    
-        .price {
-            width: 100%;
-            color: green;
         }
 
         .title {
-            max-width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            width: 100%;
+
+            font-weight: 700;
+
+            text-align: center;
         }
+
+        .price {
+            @include flex();
+
+            gap: 5px;
+            
+            width: 100%;
+
+            p:first-child {
+                font-size: 12px;
+                font-weight: 500;
+                color: black;
+            }
+            p {
+                font-size: 20px;
+                font-weight: 700;
+                color: #B6C649;
+            }
+        }
+
+        button {
+            @include flex();
+
+            width: 100%;
+            height: 40px;
+
+            margin-top: 10px;
+
+            background-color: #D1603D;
+            color: white;
+
+            font-size: 16px;
+            font-weight: 700;;
+
+            border: none;
+
+            border-radius: 5px;
+
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+            cursor: pointer;
+        }
+        button:hover {
+            // opacity: 0.9;
+            transform: scale(1.02);
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        
     }
-    
+
     .card:hover {
         transform: scale(1.02);
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15), 
         0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-        .title {
-            max-height: 62px;
-            
-            max-width: none;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: wrap;
+    
+}
+
+@media (max-width: 768px) {
+    .cardContainer .card {
+        width: clamp(139px, calc(50% - 5px), 317px);
+
+        .title, .price p {
+            font-weight: 600;
         }
     }
+
 }

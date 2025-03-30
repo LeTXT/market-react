@@ -3,7 +3,7 @@ import Input from '../components/Input'
 import Card from '../components/Card'
 import Footer from '../components/Footer'
 
-import {arrayEmphasis} from '../assets/productStore'
+import { allProducts } from '../assets/productStore'
 
 import '../styles/home.scss'
 
@@ -20,11 +20,11 @@ function Home () {
             </div>
             <div className='width'>
                 <h2>Destaque</h2>
-                <Card array={arrayEmphasis} />
+                <Card array={allProducts.filter(product => product.tag.includes('emphasis'))} />
             </div>
             <div className='width'>
                 <h2>Ofertas</h2>
-                <Card array={arrayEmphasis} />
+                <Card array={allProducts.filter(product => product.tag.includes('sale'))} />
             </div>
 
             <Footer />

@@ -1,7 +1,9 @@
 
-import { useState } from 'react'
+// import { useState } from 'react'
+import useBag from '../hooks/useBag'
 
 import CardBag from '../components/CardBag'
+
 import { IoClose } from "react-icons/io5";
 
 import { onOff, toggleClass } from '../utils/showBag'
@@ -14,29 +16,42 @@ interface BagProps {
 }
 
 function Bag ({state, setState}: BagProps) {
-    const [totalPirce, setTotalPrice] = useState(0)
+    // const [totalPrice, setTotalPrice] = useState(0)
+    const { bagItems, getTotalPrice } = useBag()
 
-    const calculateTotal = (items: { price: number, quantity: number }[]) => {
-        const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
-        setTotalPrice(total)
-    }
+
+    // const calculateTotal = (items: { price: number, quantity: number }[]) => {
+    //     const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+    //     setTotalPrice(total)
+    // }
 
     return (
         <div className='bag'>
             <div className={toggleClass(state, 'bag-content')}>
                 <div>
-                    <button onClick={() => onOff(state, setState)}>
-                        <IoClose size={30} className='icon' />
-                    </button>
+                    <div className='header'>
+                        <button onClick={() => onOff(state, setState)}>
+                            <IoClose size={30} className='icon' />
+                        </button>
+                        <div className='bagQuantity'>
+                            <p>MINHA SACOLA</p>
+                            <div className='pharagraph'>
+                                <p>{bagItems.length}</p>
+                                <p>{bagItems.length > 1 ? ' itens' : ' item'}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
 
-                    <CardBag onUpdateTotal={calculateTotal} />
+                    <CardBag />
                 </div>
                 
 
                 <div className='totalContainer'>
                     <div className='total'>
                         <p>Total</p>
-                        <p>R$ {totalPirce.toFixed(2)}</p>
+                        <p>R$ {getTotalPrice().toFixed(2).replace('.', ',')}</p>
                     </div>
                     
                     <button>Finalizar Pedido</button>

@@ -12,3 +12,9 @@
     padding: 16px;
     margin: 0;
 }
+
+@mixin border-top($margin-top: 30px) {
+    border-top: 1px solid #D1D1D1;
+    padding-top: 16px;
+    margin-top: $margin-top;
+}

@@ -3,8 +3,15 @@
 .cardBag {
     width: 100%;
 
+    div:first-child {
+        border-top: none;
+
+        padding-top: 0;
+    }
+
     .cardBagItem {
         @include flex(row, center, start);
+        @include border-top();
 
         .removeItem {
             
@@ -49,9 +56,15 @@
             padding-bottom: 4px;
 
             transition: opacity 0.3s;
+
+            outline: none;
         }
         button:disabled {
             opacity: 0.5;
+        }
+
+        button:active {
+            transform: scale(0.9);
         }
         
     }

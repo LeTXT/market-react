@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+
 import { ProductType } from '../assets/types'
 
 import NavigationBar from '../components/NavigationBar'
@@ -12,6 +13,7 @@ import '../styles/products.scss'
 
 function Products() {
     const [searchState, setSearchState] = useState<ProductType[]>(allProducts)
+    
     const location = useLocation()
 
     useEffect(() => {

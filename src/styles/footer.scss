@@ -9,12 +9,15 @@
 
     flex-wrap: wrap;
 
+    margin-top: 80px;
+
     .aboutUsAndContact {
         @include flex(row, space-between, start);
 
         flex-wrap: wrap;   
 
         width: 100%;
+        max-width: 1293px;
 
         .aboutUs {
             @include flex(column);  
@@ -29,6 +32,10 @@
             }
         }
         .contact {
+            @include flex(column);  
+
+            width: 300px;
+
             p {
                 color: #D1603D;
             }
@@ -52,24 +59,15 @@
         }
     }
 
-    .developmentContainer {
-        @include flex(column);
-
-        
-        width: 100%;
-        
-        .development {
-            @include flex(row, space-between);
-
-            width: 100%;
-        }
-    }
-
 }
 
-@media (min-width: 768px) {
-    .aboutUs {
-        width: 100%;
-    }
-
+@media (max-width: 678px) {
+    
+      
+    .footer .aboutUsAndContact{
+        .aboutUs, .contact {
+            width: 100%;
+        }
+    }   
+        
 }

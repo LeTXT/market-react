@@ -36,6 +36,26 @@
 
     .links {
         @include flex(row, space-between);
+
+        .bagUnity {
+            @include flex();
+
+            border-radius: 20px;
+
+            width: 20px;
+            height: 20px;
+
+            z-index: 2;
+
+            background-color: #D1603D;
+
+            transform: translate(19px, 10px);
+
+            p {
+                color: white;
+                font-size: 12px;
+            }
+        }
     }
 
     .input {

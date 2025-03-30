@@ -1,4 +1,8 @@
+import useBag from '../hooks/useBag'
+
 import { ProductType } from '../assets/types'
+
+// import { addProductToBag } from '../utils/addProductToBag'
 
 import '../styles/card.scss'
 
@@ -7,6 +11,8 @@ interface CardProps {
 }
 
 function Card({array}: CardProps) {
+    const { addToBag } = useBag()
+
     return (
         <div className='cardContainer'>
             {array.length > 0 ? (
@@ -16,8 +22,12 @@ function Card({array}: CardProps) {
                         <div className='imgContainer'>
                         <img src={item.img} alt={item.title} />
                     </div>
-                    <p className='price'>R$ {item.price}</p>
                     <p className='title'>{item.title}</p>
+                    <div className='price'>
+                        <p>Preço</p>
+                        <p>R$ {item.price.toFixed(2).replace('.', ',')}</p>
+                    </div>
+                    <button onClick={() => addToBag(item)}>COMPRAR</button>
                     </div>
                 </div>
                         ))
@@ -29,3 +39,5 @@ function Card({array}: CardProps) {
 }
 
 export default Card
+
+// addProductToBag(array[index], setQuantity)
