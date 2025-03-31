@@ -5,14 +5,7 @@ export interface ProductType {
     img: string
     quantity: number
     maxQuantity: number
+    gramOptions: number[]
     tag: string[]
+    selectedWeight?: number
 }
-
-// export interface Item {
-//     id: number
-//     title: string
-//     price: number
-//     img: string
-//     quantity: number
-//     maxQuantity: number
-// }

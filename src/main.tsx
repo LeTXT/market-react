@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BagProvider } from './context/BagContext.tsx'
+import { BagProvider } from './context/BagProvider.tsx'
 
 import App from './App.tsx'
 

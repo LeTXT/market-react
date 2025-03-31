@@ -4,46 +4,51 @@ export const allProducts: ProductType[] = [
     {
         id: 1,
         img: "./coffee.png",
-        title: "Café Real Coffee Tradicional Grão 500g", 
+        title: "Café Real Coffee Tradicional Grão", 
         price: 36.90, 
         quantity: 1,
         maxQuantity: 3,
+        gramOptions: [250, 500, 750, 1000],
         tag: ['emphasis']
     },
     { 
         id: 2,
         img: "./coffee.png",
-        title: "Café Real Coffee Tradicional Moído 500g", 
+        title: "Café Real Coffee Tradicional Moído", 
         price: 36.90, 
         quantity: 1,
         maxQuantity: 3,
+        gramOptions: [250, 500, 750, 1000],
         tag: ['emphasis', 'sale']
     },
     { 
         id: 3,
         img: "./coffee.png",
-        title: "Café Real Coffee Tradicional Torrado E Moído Aroma De Caramelo 500g", 
+        title: "Café Real Coffee Tradicional Torrado E Moído Aroma De Caramelo", 
         price: 36.90, 
         quantity: 1,
         maxQuantity: 3,
+        gramOptions: [250, 500, 750, 1000],
         tag: ['emphasis', 'sale']
     },
     { 
         id: 4,
         img: "./coffee.png",
-        title: "Café Real Coffee Extra Forte Moído 500g", 
+        title: "Café Real Coffee Extra Forte Moído", 
         price: 36.90, 
         quantity: 1,
         maxQuantity: 3,
+        gramOptions: [250, 500, 750, 1000],
         tag: ['emphasis', 'sale']
     },
     { 
         id: 5,
         img: "./coffee.png",
-        title: "Café Real Coffee Extra Forte Moído 500g", 
+        title: "Café Real Coffee Extra Forte Moído", 
         price: 36.90, 
         quantity: 1,
         maxQuantity: 3,
+        gramOptions: [250, 500, 750, 1000],
         tag: ['sale']
     },
 ]

@@ -31,41 +31,14 @@
         }
     }
 
-    .quantity {
-        @include flex(row, start);
+    .titleAndPrice {
 
-        input {
-            text-align: center;
-            border: none;
-
-            width: 25px;
-
-            font-size: 16px;
-            font-weight: 700;
+        p:first-child {
+            color: black;
         }
 
-        button {
-
-            width: 30px;
-            height: 30px;
-
-            cursor: pointer;
-            font-size: 24px;
-            font-weight: 700;
-            
-            padding-bottom: 4px;
-
-            transition: opacity 0.3s;
-
-            outline: none;
+        p {
+            color: $orange-color;
         }
-        button:disabled {
-            opacity: 0.5;
-        }
-
-        button:active {
-            transform: scale(0.9);
-        }
-        
     }
 }

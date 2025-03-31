@@ -109,24 +109,24 @@
 
     overflow: auto;
 
-    button {
-        @include flex();
+    // button {
+    //     @include flex();
 
-        width: 40px;
-        height: 40px;
+    //     width: 40px;
+    //     height: 40px;
 
-        border: 1px solid black;
-        border-radius: 50px;
+    //     border: 1px solid black;
+    //     border-radius: 50px;
 
-        background-color: transparent;
+    //     background-color: transparent;
 
-        transition: opacity 0.2s;
+    //     transition: opacity 0.2s;
 
-        cursor: pointer;
-    }
-    button:hover {
-        opacity: 0.8;
-    }
+    //     cursor: pointer;
+    // }
+    // button:hover {
+    //     opacity: 0.8;
+    // }
 }
 
 .show {

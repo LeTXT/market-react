@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+
+.product {
+    @include flex(column);
+    @include spacing();
+}
+
+.productContainer {
+    @include flex();
+
+    .addBag {
+        @include flex();
+
+        gap: 5px;
+        input {
+            width: 40px;
+        }
+    }
+
+   
+}

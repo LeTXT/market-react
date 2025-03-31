@@ -1,36 +1,18 @@
-import { createContext, useState, ReactNode } from "react"
+import { useState, ReactNode } from "react"
+import { BagContext } from "./BagContext"
 import { ProductType } from "../assets/types"
-
-interface BagContextType {
-    bagItems: ProductType[];
-    addToBag: (product: ProductType) => void;
-    removeFromBag: (productId: number) => void;
-    updateQuantity: (productId: number, newQuantity: number) => void;
-    clearBag: () => void;
-    getTotalPrice: () => number;
-}
-
-const defaultBagContext: BagContextType = {
-    bagItems: [],
-    addToBag: () => {},
-    removeFromBag: () => {},
-    updateQuantity: () => {},
-    clearBag: () => {},
-    getTotalPrice: () => 0,
-  };
-  
-  export const BagContext = createContext<BagContextType>(defaultBagContext);
-
 
 export const BagProvider = ({ children }: {children: ReactNode}) => {
     const [bagItems, setBagItems] = useState<ProductType[]>([])
 
     const addToBag = (product: ProductType) => {
-        console.log("Adicionando produto ao carrinho:", product)
-        console.log(bagItems)
+        console.log(product);
+        
         
         setBagItems((prevBagItems) => {
-            const existingItem = prevBagItems.find((item) => item.id === product.id)
+            const existingItem = prevBagItems.find((item) => 
+                item.id === product.id && item.selectedWeight === product.selectedWeight
+        )
 
             if (existingItem) {
 

@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
-.products {
+.searchResults {
     @include flex();
     @include spacing();
 }

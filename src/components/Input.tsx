@@ -12,7 +12,7 @@ function Input() {
         e.preventDefault()
 
         if (searchTerm.trim() !== "") {
-          navigate(`/product?search=${searchTerm}`)
+          navigate(`/searchResults?search=${searchTerm}`)
         }
       };
 

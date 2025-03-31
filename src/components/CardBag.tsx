@@ -1,11 +1,13 @@
 import { useBag } from '../hooks/useBag'
 
-import { IoClose } from "react-icons/io5";
+import { IoClose } from "react-icons/io5"
+
+import ItemCounter from './ItemCounter'
 
 import '../styles/cardBag.scss'
 
 function CardBag() {
-    const { bagItems, removeFromBag, updateQuantity } = useBag()
+    const { bagItems, removeFromBag } = useBag()
     
     return (
         <div className="cardBag">
@@ -17,17 +19,12 @@ function CardBag() {
                                 <div className="imgContainer">
                                     <img src={item.img} alt={item.title} />
                                 </div>
-                                <div>
+                                <div className='titleAndPrice'>
                                     <p>{item.title}</p>
                                     <p>{'R$ '+ item.price.toFixed(2).replace('.', ',')}</p>
                                     
-                                    <div className='quantity'>
-                                        <button onClick={() => 
-                                            updateQuantity(item.id, item.quantity -1)} disabled={item.quantity === 1}>-</button>
-                                        <input type="text" value={item.quantity} readOnly />
-                                        <button onClick={() => 
-                                            updateQuantity(item.id, item.quantity + 1)} disabled={item.quantity === item.maxQuantity}>+</button>
-                                    </div>
+                                    <ItemCounter item={item}/>
+                                    
                                 </div>         
                                 <div className='removeItem'>
                                     <button onClick={() => removeFromBag(item.id)}>

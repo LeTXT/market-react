@@ -9,9 +9,9 @@ import Card from '../components/Card'
 
 import { allProducts } from '../assets/productStore'
 
-import '../styles/products.scss'
+import '../styles/searchResults.scss'
 
-function Products() {
+function SearchResults() {
     const [searchState, setSearchState] = useState<ProductType[]>(allProducts)
     
     const location = useLocation()
@@ -31,7 +31,7 @@ function Products() {
     }, [location.search])
 
     return (
-        <div className='products'>
+        <div className='searchResults'>
             <div>
                 <NavigationBar />
                 <Input />
@@ -42,4 +42,4 @@ function Products() {
     )
 }
 
-export default Products
+export default SearchResults
