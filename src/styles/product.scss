@@ -3,6 +3,10 @@
 .product {
     @include flex(column);
     @include spacing();
+
+    img {
+        width: 50%;
+    }
 }
 
 .productContainer {

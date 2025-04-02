@@ -2,23 +2,25 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { PiHouseSimpleBold as Home, PiShoppingBagBold as BagIcon, PiUserBold as User } from 'react-icons/pi'
 
-import { useBag } from '../hooks/useBag'
-
 import { onOff} from '../utils/showBag'
 
 import Input from './Input'
 import Bag  from './Bag'
+import IconButton from './IconButton'
 
 import '../styles/navbar.scss'
 
 function NavigationBar() {
     const [state, setState ] = useState<boolean>(false);
-    const { bagItems } = useBag()
+
+    const handleClick = () => {
+        onOff(state, setState);
+    };
     
 
     return (
         <div className='navbar'>
-            <div>
+            <div className='logo'>
                 <Link to='/'>
                     <Home size={25} className='icon' />
                 </Link>
@@ -28,12 +30,7 @@ function NavigationBar() {
                 <Input />
                 <ul>
                     <li>
-                        <div className='bagUnity'>
-                            <p>{bagItems.length}</p>
-                        </div>
-                        <button onClick={() => onOff(state, setState)}>
-                            <BagIcon size={25} className='icon' />
-                        </button>
+                        <IconButton onClick={handleClick} Icon={BagIcon} size={25} iconClass='bagUnity' />
                     </li>
                     
                     <li><Link to='/login' >

@@ -24,7 +24,7 @@ function Home () {
             </div>
             <div className='width'>
                 <h2>Ofertas</h2>
-                <Card array={allProducts.filter(product => product.tag.includes('sale'))} />
+                {/* <Card array={allProducts.filter(product => product.tag.includes('sale'))} /> */}
             </div>
 
             <Footer />

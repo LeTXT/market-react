@@ -1,23 +1,28 @@
 @use './color' as *;
 @use './mixin' as *;
 
+button {
+    cursor: pointer;
+}
+
 .addButton {
+    width: 50%;
+
     button {
         width: 148px;
         height: 40px;
-    
+        max-width: 100%;
         background-color: $orange-color;
         color: white;
     
         border: none;
     
         border-radius: 5px;
-    
-        font-size: 16px;
-        font-weight: 700;
-    
-        cursor: pointer;
 
+        text-wrap: nowrap;
+    
+        font-size: clamp(9px, 70%, 16px);
+        font-weight: 700;
     }
 
     button:hover {
@@ -36,6 +41,10 @@
     margin-bottom: 30px;
     margin-top: 15px;
 
+    gap: 5px;
+
+    flex-wrap: wrap;
+
     width: 100%;
 
     input {
@@ -43,7 +52,11 @@
     }
 
     label {
-        padding: 4px 11px;
+        @include flex();
+
+        width: 62px;
+        height: 30px;
+        font-size: 16px;
 
         border: 1px solid $light-gray-color;
         border-radius: 30px;
@@ -51,13 +64,8 @@
         color: $gray-color;
 
         cursor: pointer;
-
-        font-size: 16px;
         
         text-align: center;
-
-        height: 30px;
-        width: 62px;
 
         transition: all 0.3s ease;
     }
@@ -74,7 +82,7 @@
     }
 }
 
-.itemCounter {
+.itemCounterButton {
     @include flex(row, space-between);
 
     width: 98px;
@@ -97,14 +105,56 @@
     button {
         width: 30px;
         height: 30px;
-
-        cursor: pointer;
         
         border: none;
-        background-color: rgba(255, 255, 255, 0);
+        background-color: transparent;
+    }
+    button:disabled {
+        transform: scale(1);
     }
 
     button:active {
         transform: scale(0.9);
+    }
+}
+
+.iconButton {
+    button {
+        border: none;
+        background-color: transparent;
+
+        z-index: 1;
+    }
+
+    button:hover {
+        transform: scale(1.02);
+    }
+
+    button:active {
+        transform: scale(0.98);
+    }
+
+    .none {
+        display: none;
+    }
+    
+    .bagUnity {
+        @include flex();
+
+        border-radius: 20px;
+
+        width: 20px;
+        height: 20px;
+
+        z-index: 2;
+
+        background-color: $orange-color;
+
+        transform: translate(13px, 11px);
+
+        p {
+            color: white;
+            font-size: 12px;
+        }
     }
 }

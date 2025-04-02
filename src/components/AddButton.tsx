@@ -11,7 +11,6 @@ interface CardProps {
 function AddButton({item, title}: CardProps) {
     const { addToBag } = useBag()
     
-
     return (
         <div className='addButton'>
             <button onClick={() => addToBag(item)}>{title}</button>
