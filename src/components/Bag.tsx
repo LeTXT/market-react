@@ -48,8 +48,9 @@ function Bag ({state, setState}: BagProps) {
                         <p>Total</p>
                         <p>R$ {getTotalPrice().toFixed(2).replace('.', ',')}</p>
                     </div>
-                    
-                    <button>Finalizar Pedido</button>
+                    <div className='finalizeOrderButton'>
+                        <button>Finalizar Pedido</button>
+                    </div>
                 </div>
             </div>
 

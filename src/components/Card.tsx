@@ -17,6 +17,10 @@ function Card({ array }: CardProps) {
 
     const navigate = useNavigate()
 
+    const handleWeightChange = (productId: number, weight: number) => {
+        setSelectedWeights((prev) => ({ ...prev, [productId]: weight }));
+    };
+
     return (
         <div className='cardContainer'>
             {array.map((item) => {
@@ -40,6 +44,7 @@ function Card({ array }: CardProps) {
                             item={item}
                             selectedWeight={selectedWeight}
                             setSelectedWeights={setSelectedWeights}
+                            handleWeightChange={handleWeightChange}
                         />
 
                         <div className="priceAndAddButton">

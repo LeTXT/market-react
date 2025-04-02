@@ -1,4 +1,4 @@
-interface PriceOption {
+export interface PriceOption {
     id: number;
     grams: number;
     price: number;

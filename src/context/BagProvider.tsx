@@ -39,7 +39,7 @@ export const BagProvider = ({ children }: { children: ReactNode }) => {
                     selectedPrice: product.selectedPrice,
                     selectedWeight: product.selectedWeight,
                     availableStock: product.priceOptions.find(option => option.price === product.selectedPrice)?.availableStock || 0,
-                    quantity: 1
+                    quantity: (product.quantity || 1)
                 }]
                 // return [...prevBagItems, { ...product, quantity: 1 }]
             }

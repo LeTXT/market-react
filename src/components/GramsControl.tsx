@@ -6,9 +6,10 @@ interface GramsControlProps {
     item: ProductType
     selectedWeight: number
     setSelectedWeights: React.Dispatch<React.SetStateAction<{ [key: number]: number }>>
+    handleWeightChange: (productId: number, weight: number) => void
 }
 
-function GramsControl({ item, selectedWeight, setSelectedWeights }: GramsControlProps) {
+function GramsControl({ item, selectedWeight, setSelectedWeights, handleWeightChange}: GramsControlProps) {
 
         useEffect(() => {
             const initialWeights: { [key: number]: number } = {};
@@ -19,10 +20,6 @@ function GramsControl({ item, selectedWeight, setSelectedWeights }: GramsControl
     
             setSelectedWeights(initialWeights);
         }, [item, setSelectedWeights]);
-
-    const handleWeightChange = (productId: number, weight: number) => {
-        setSelectedWeights((prev) => ({ ...prev, [productId]: weight }));
-    };
 
     return (
         <div className="gramContainer">

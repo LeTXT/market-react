@@ -12,12 +12,14 @@ import ItemCounterButton from './ItemCounterButton'
 import '../styles/cardBag.scss'
 
 function CardBag() {
-    const { bagItems, removeFromBag } = useBag()
+    const { bagItems, removeFromBag, updateQuantity } = useBag()
 
-    const handleClick = (item: ProductBagType) => {
-        console.log(item.selectedWeight);
-        
+    const handleClick = (item: ProductBagType) => { 
         removeFromBag((item.cardBagId || 0))
+    }
+
+    const handleCounter = (item: ProductBagType & { selectedWeight: number | null }, n: number) => {
+        updateQuantity(item.cardBagId, item.quantity + n)
     }
     
     return (
@@ -35,7 +37,12 @@ function CardBag() {
                                     <p>{item.selectedWeight}g</p>
                                     <p className='price'>{'R$ '+ (item.selectedPrice || 0).toFixed(2).replace('.', ',')}</p>
                                     
-                                    <ItemCounterButton item={item}/>
+                                    <ItemCounterButton 
+                                    handleCounterToDecrease={() => handleCounter(item, -1)} 
+                                    handleCounterIncrease={() => handleCounter(item, 1)} 
+                                    quantity={item.quantity}
+                                    availableStock={item.availableStock}
+                                    />
                                     
                                 </div>            
                                     <IconButton onClick={() => handleClick(item)} Icon={deleteIcon} size={25} />

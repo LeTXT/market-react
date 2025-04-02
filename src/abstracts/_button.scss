@@ -5,9 +5,13 @@ button {
     cursor: pointer;
 }
 
+.finalizeOrderButton {
+    width: 100%;
+}
 .addButton {
     width: 50%;
-
+}
+.addButton, .finalizeOrderButton {
     button {
         width: 148px;
         height: 40px;
