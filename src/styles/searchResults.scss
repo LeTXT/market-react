@@ -1,6 +1,6 @@
 @use '../abstracts/' as *;
 
 .searchResults {
-    @include flex();
+    @include flex(column);
     @include spacing();
 }

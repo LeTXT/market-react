@@ -6,6 +6,7 @@ import { ProductType } from '../assets/types'
 import NavigationBar from '../components/NavigationBar'
 import Input from '../components/Input'
 import Card from '../components/Card'
+import Footer from '../components/Footer'
 
 import { allProducts } from '../assets/productStore'
 
@@ -13,17 +14,17 @@ import '../styles/searchResults.scss'
 
 function SearchResults() {
     const [searchState, setSearchState] = useState<ProductType[]>(allProducts)
-    
+
     const location = useLocation()
 
     useEffect(() => {
         const params = new URLSearchParams(location.search)
         const searchQuery = params.get('search')?.toLowerCase() || ''
 
-        if(searchQuery) {
+        if (searchQuery) {
             const filteredProducts = allProducts.filter(product => product.title.toLowerCase().includes(searchQuery)
-        )
-        setSearchState(filteredProducts)
+            )
+            setSearchState(filteredProducts)
         } else {
             setSearchState(allProducts)
         }
@@ -32,12 +33,12 @@ function SearchResults() {
 
     return (
         <div className='searchResults'>
-            <div>
-                <NavigationBar />
-                <Input />
+            <NavigationBar />
+            <Input />
 
-                <Card array={searchState} />
-            </div>
+            <Card array={searchState} path='.'/>
+
+            <Footer />
         </div>
     )
 }

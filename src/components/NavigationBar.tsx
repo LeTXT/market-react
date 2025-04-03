@@ -10,7 +10,11 @@ import IconButton from './IconButton'
 
 import '../styles/navbar.scss'
 
-function NavigationBar() {
+interface NavigationBarProps {
+    path?: string
+}
+
+function NavigationBar({ path = '.' }: NavigationBarProps) {
     const [state, setState ] = useState<boolean>(false);
 
     const handleClick = () => {
@@ -39,7 +43,7 @@ function NavigationBar() {
                 </ul>
             </div>
 
-            <Bag state={state} setState={setState} />
+            <Bag state={state} setState={setState} path={path}/>
 
         </div>
     )

@@ -3,9 +3,11 @@ import { ProductType } from "./types"
 export const allProducts: ProductType[] = [
     {
         id: 1,
-        img: "./coffee.png",
+        img: "/coffee.png",
         title: "Café Real Coffee Tradicional Grão",
-        description: "Café em grãos selecionados, perfeito para um espresso encorpado e aromático.",
+        description: `<p>O Real Coffee é um café especial, produzido com grãos 100% arábica cultivados em altitudes elevadas, garantindo um perfil sensorial refinado e autêntico.</p>
+        <p>Selecionamos cuidadosamente os grãos e utilizamos um processo de torra artesanal para realçar suas características naturais, resultando em uma bebida equilibrada e envolvente.</p>
+        <p>Com notas de chocolate e caramelo, complementadas por uma acidez vibrante e um toque floral sutil, nosso café oferece uma experiência sensorial rica e harmoniosa.</p>`,
         quantity: 1,
         priceOptions: [
             { id: 1, grams: 250, price: 24.90, availableStock: 5 },
@@ -17,7 +19,7 @@ export const allProducts: ProductType[] = [
     },
     {
         id: 2,
-        img: "./coffee.png",
+        img: "/coffee.png",
         title: "Café Real Coffee Tradicional Moído",
         description: "Café moído de alta qualidade, perfeito para um café encorpado e equilibrado.",
         quantity: 1,
@@ -31,7 +33,7 @@ export const allProducts: ProductType[] = [
     },
     {
         id: 3,
-        img: "./coffee.png",
+        img: "/coffee.png",
         title: "Café Real Coffee Tradicional Torrado e Moído Aroma de Caramelo",
         description: "Uma seleção especial de grãos torrados com notas suaves de caramelo, ideal para paladares refinados.",
         quantity: 1,
@@ -45,7 +47,7 @@ export const allProducts: ProductType[] = [
     },
     {
         id: 4,
-        img: "./coffee.png",
+        img: "/coffee.png",
         title: "Café Real Coffee Extra Forte Moído",
         description: "Um café encorpado e intenso, para quem gosta de um sabor mais forte e marcante.",
         quantity: 1,
@@ -59,7 +61,7 @@ export const allProducts: ProductType[] = [
     },
     {
         id: 5,
-        img: "./coffee.png",
+        img: "/coffee.png",
         title: "Café Real Coffee Extra Forte Moído",
         description: "O mesmo café extra forte, mas em uma embalagem promocional especial.",
         quantity: 1,

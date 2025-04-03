@@ -13,9 +13,10 @@ import { PiArrowLineRightBold as LineRight } from "react-icons/pi";
 interface BagProps {
     state: boolean
     setState: React.Dispatch<React.SetStateAction<boolean>>
+    path?: string
 }
 
-function Bag ({state, setState}: BagProps) {
+function Bag ({state, setState, path}: BagProps) {
     const { bagItems, getTotalPrice } = useBag()
 
     const handleClick = () => {
@@ -39,7 +40,7 @@ function Bag ({state, setState}: BagProps) {
                     </div>
                     
 
-                    <CardBag />
+                    <CardBag path={path}/>
                 </div>
                 
 

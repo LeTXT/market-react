@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom'
 
 import NavigationBar from '../components/NavigationBar'
 import Input from '../components/Input'
+import Footer from '../components/Footer'
+
 import GramsControl from '../components/GramsControl'
 import ItemCounterButton from '../components/ItemCounterButton'
 import AddButton from '../components/AddButton'
@@ -12,12 +14,15 @@ import { allProducts } from '../assets/productStore'
 import { PriceOption } from '../assets/types'
 
 import '../styles/product.scss'
+import Card from '../components/Card'
 
 
 function Product() {
     const [selectedWeights, setSelectedWeights] = useState<{ [key: number]: number }>({});
     const [quantity, setQuantity] = useState<number>(1)
     const [selectedPrice, setSelectedPrice] = useState<number>(0)
+
+    const path = '/market-react'
 
     const { id } = useParams()
 
@@ -43,53 +48,74 @@ function Product() {
                 setQuantity(newQuantity)
             }
         }
-        
+
     }
 
     const handleWeightChange = (productId: number, weight: number) => {
         setQuantity(1)
         setSelectedWeights((prev) => ({ ...prev, [productId]: weight }));
-    };
-    
+    }
 
-    return (
-        <div className='product'>
-            <NavigationBar />
-            <Input />
+    const ProductDescription = (description: string) => {
+        const paragraphs = description.split("</p>").map((p, index) =>
+            p.replace("<p>", "").trim() && <p key={index}>{p.replace("<p>", "").trim()}</p>
+        );
 
-            <div className='productContainer'>
-                <div>
-                    <img src={product.img} alt={product.title} />
-                </div>
-                <div>
-                    <h1>{product.title}</h1>
-                    <p>{product.description}</p>
+        return paragraphs
+    }
 
-                    <GramsControl
-                        item={product}
-                        selectedWeight={selectedWeight}
-                        setSelectedWeights={setSelectedWeights}
-                        handleWeightChange={handleWeightChange}
-                    />
+        return (
+            <div className='product'>
+                <NavigationBar path={path} />
+                <Input />
 
-                    <div className='addBag'>
-                        <p>R$ {selectedPrice.toFixed(2).replace('.', ',')}</p>
-
-                        <ItemCounterButton
-                            handleCounterToDecrease={() => handleCounter(-1)}
-                            handleCounterIncrease={() => handleCounter(1)}
-                            quantity={quantity}
-                            availableStock={currentPriceOption?.availableStock || 0}
-                        />
-
-                        <AddButton item={{ ...product, selectedWeight, selectedPrice, quantity  }} title='+ SACOLA' />
+                <div className='productContainer'>
+                    <div className='productImg'>
+                        <img src={path+product.img} alt={product.title} />
                     </div>
+
+                    <div className='productInfo'>
+                        <h1>{product.title}</h1>
+                        <div className='price'>
+                            <p>R$ {selectedPrice.toFixed(2).replace('.', ',')}</p>
+                        </div>
+
+                        <div className='gramContainer'>
+                            <GramsControl
+                                item={product}
+                                selectedWeight={selectedWeight}
+                                setSelectedWeights={setSelectedWeights}
+                                handleWeightChange={handleWeightChange}
+                            />
+                        </div>
+
+                        <div className='addBag'>
+
+                            <ItemCounterButton
+                                handleCounterToDecrease={() => handleCounter(-1)}
+                                handleCounterIncrease={() => handleCounter(1)}
+                                quantity={quantity}
+                                availableStock={currentPriceOption?.availableStock || 0}
+                            />
+
+
+                            <AddButton item={{ ...product, selectedWeight, selectedPrice, quantity }} title='+ SACOLA' />
+
+                        </div>
+                        <div>
+                            <div>{ProductDescription(product.description)}</div>
+                        </div>
+
+                    </div>
+
                 </div>
+
+                <Card array={allProducts.filter(item => item.id !== productId).slice(0, 3)} path={path} />
+
+                <Footer path={path} />
 
             </div>
+        )
+    }
 
-        </div>
-    )
-}
-
-export default Product
+    export default Product

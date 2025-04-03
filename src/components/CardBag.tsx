@@ -11,7 +11,12 @@ import ItemCounterButton from './ItemCounterButton'
 
 import '../styles/cardBag.scss'
 
-function CardBag() {
+interface CardBagProps {
+    path?: string
+}
+
+
+function CardBag({path = '.'}: CardBagProps) {
     const { bagItems, removeFromBag, updateQuantity } = useBag()
 
     const handleClick = (item: ProductBagType) => { 
@@ -30,7 +35,7 @@ function CardBag() {
                         return (
                             <div key={item.cardBagId} className='cardBagItem'>
                                 <div className="imgContainer">
-                                    <img src={item.img} alt={item.title} />
+                                    <img src={`${path}${item.img}`} alt={item.title} />
                                 </div>
                                 <div className='titleAndPrice'>
                                     <p>{item.title}</p>
