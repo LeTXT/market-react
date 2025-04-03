@@ -1,9 +1,9 @@
 import { useState, ReactNode } from "react"
 import { BagContext } from "./BagContext"
-import { ProductType, ProductBagType } from "../assets/types"
+import { ProductType} from "../assets/types"
 
 export const BagProvider = ({ children }: { children: ReactNode }) => {
-    const [bagItems, setBagItems] = useState<ProductBagType[]>([])
+    const [bagItems, setBagItems] = useState<ProductType[]>([])
 
     const addToBag = (product: ProductType) => {
         console.log(product);
@@ -19,7 +19,7 @@ export const BagProvider = ({ children }: { children: ReactNode }) => {
                 const updatedBagItems = [...prevBagItems]
                 const existingItem = updatedBagItems[existingItemIndex]
 
-                if (existingItem.quantity < existingItem.availableStock) {
+                if (existingItem.quantity < (existingItem?.availableStock || 0)) {
                     updatedBagItems[existingItemIndex] = {
                         ...existingItem,
                         quantity: existingItem.quantity + 1
@@ -29,12 +29,12 @@ export const BagProvider = ({ children }: { children: ReactNode }) => {
                     return prevBagItems
                 }
             } else {
-                return [...prevBagItems, {
+                return [...prevBagItems, { ...product, 
                     cardBagId: product.id + (product.priceOptions.find(option => option.price === product.selectedPrice)?.grams || 0),
 
-                    id: product.id,
-                    title: product.title,
-                    img: product.img,
+                    // id: product.id,
+                    // title: product.title,
+                    // img: product.img,
 
                     selectedPrice: product.selectedPrice,
                     selectedWeight: product.selectedWeight,

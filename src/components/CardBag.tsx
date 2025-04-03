@@ -2,8 +2,7 @@ import { useBag } from '../hooks/useBag'
 
 import { AiOutlineDelete as deleteIcon } from "react-icons/ai";
 
-import { ProductBagType } from '../assets/types'
-// import { ProductType, ProductBagType } from '../assets/types'
+import { ProductType } from '../assets/types'
 
 import IconButton from './IconButton'
 
@@ -19,12 +18,12 @@ interface CardBagProps {
 function CardBag({path = '.'}: CardBagProps) {
     const { bagItems, removeFromBag, updateQuantity } = useBag()
 
-    const handleClick = (item: ProductBagType) => { 
+    const handleClick = (item: ProductType) => { 
         removeFromBag((item.cardBagId || 0))
     }
 
-    const handleCounter = (item: ProductBagType & { selectedWeight: number | null }, n: number) => {
-        updateQuantity(item.cardBagId, item.quantity + n)
+    const handleCounter = (item: ProductType & { selectedWeight: number | null }, n: number) => {
+        updateQuantity((item.cardBagId || 0), item.quantity + n)
     }
     
     return (

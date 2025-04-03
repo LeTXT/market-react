@@ -8,7 +8,6 @@ interface ItemCounterProps {
 }
 
 function ItemCounterButton({handleCounterToDecrease, handleCounterIncrease, quantity, availableStock}: ItemCounterProps) {
-    // const { updateQuantity } = useBag()
     
     return (
         <div className='itemCounterButton'>

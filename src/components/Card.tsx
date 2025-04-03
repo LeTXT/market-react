@@ -10,7 +10,7 @@ import '../styles/card.scss'
 
 interface CardProps {
     array: ProductType[]
-    path: string
+    path?: string
 }
 
 function Card({ array, path = '.' }: CardProps) {
