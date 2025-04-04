@@ -1,7 +1,8 @@
-@use '../abstracts/' as *;
+@use '../../abstracts/' as *;
 
 .input {
     @include flex();
+    @include border();
 
     gap: 5px;
 
@@ -9,16 +10,13 @@
 
     padding: 0 10px;
 
-    border: 1px solid #D1D1D1;
-    border-radius: 5px;
-
     box-sizing: border-box;
 
     display: none;
 
     width: 100%;
 
-    form {
+    .formSearch {
         @include flex();
 
         gap: 5px;

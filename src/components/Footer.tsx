@@ -1,7 +1,7 @@
 
 import { footerLink } from '../assets/footerLink'
 
-import '../styles/footer.scss'
+import '../styles/components/footer.scss'
 
 interface FooterProps {
     path?: string
@@ -13,7 +13,7 @@ function Footer({path = '.'}: FooterProps) {
         <div className="footer">
             <div className="aboutUsAndContact">
                 <div className='aboutUs'>
-                    <img src={path+"/logo.png"} alt="" />
+                    <img src={path+"/logo.svg"} alt="" />
                     <p>Na Real Caffee, prezamos pela qualidade e autenticidade do verdadeiro café especial. Nossos grãos são cultivados em regiões nobres, com terroir ideal para o desenvolvimento de aromas e sabores únicos. Cada etapa do processo, do plantio à torra, é cuidadosamente controlada para garantir um café puro, sem blends, preservando sua identidade e sofisticação.</p>
                     
                 </div>

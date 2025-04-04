@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import { PiMagnifyingGlassBold as Search } from "react-icons/pi"
 
-import '../styles/input.scss'
+import '../styles/components/input.scss'
 
 function Input() {
     const [searchTerm, setSearchTerm] = useState<string>('')
@@ -18,7 +18,7 @@ function Input() {
 
     return (
         <div className="input">
-            <form onSubmit={handleSubmit}>
+            <form className="formSearch" onSubmit={handleSubmit}>
                 <input 
                     type="text" 
                     value={searchTerm}

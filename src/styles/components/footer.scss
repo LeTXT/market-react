@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use '../../abstracts/' as *;
 
 
 .footer {
@@ -25,6 +25,10 @@
             gap: 10px;
             
             width: 300px;
+
+            img {
+                width: 200px;
+            }
             
             p {
                 font-size: 12px;

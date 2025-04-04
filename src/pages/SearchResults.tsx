@@ -10,7 +10,7 @@ import Footer from '../components/Footer'
 
 import { allProducts } from '../assets/productStore'
 
-import '../styles/searchResults.scss'
+import '../styles/pages/searchResults.scss'
 
 function SearchResults() {
     const [searchState, setSearchState] = useState<ProductType[]>(allProducts)

@@ -1,8 +1,8 @@
 import { createContext } from "react"
-import { ProductType, ProductBagType } from "../assets/types"
+import { ProductType } from "../assets/types"
 
 interface BagContextType {
-    bagItems: ProductBagType[];
+    bagItems: ProductType[];
     addToBag: (product: ProductType) => void;
     removeFromBag: (productId: number) => void;
     updateQuantity: (productId: number, newQuantity: number) => void;

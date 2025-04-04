@@ -1,6 +1,4 @@
 
-// import { PiArrowLineRightBold as LineRight } from "react-icons/pi";
-// import { onOff } from "../utils/showBag";
 import { useBag } from '../hooks/useBag'
 
 interface IconButtonProps {

@@ -1,14 +1,12 @@
 import { useBag } from '../hooks/useBag'
 
 import CardBag from '../components/CardBag'
+import IconButton from './IconButton'
 
-// import { IoClose } from "react-icons/io5";
-
+import { PiArrowLineRightBold as LineRight } from "react-icons/pi";
 import { onOff, toggleClass } from '../utils/showBag'
 
-import '../styles/bag.scss'
-import IconButton from './IconButton'
-import { PiArrowLineRightBold as LineRight } from "react-icons/pi";
+import '../styles/components/bag.scss'
 
 interface BagProps {
     state: boolean

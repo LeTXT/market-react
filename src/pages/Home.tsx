@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 
 import { allProducts } from '../assets/productStore'
 
-import '../styles/home.scss'
+import '../styles/pages/home.scss'
 
 function Home () {
     return (

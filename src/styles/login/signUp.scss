@@ -1,0 +1,51 @@
+@use '../../abstracts/' as *;
+
+.signUp {
+    @include flex(column);
+    
+    width: 100%;
+    height: 100lvh;
+
+    .signUpContainer {
+        @include card();
+
+        p {
+            font-size: 0.625rem;
+        }
+
+        .backToSingIn {
+            margin-top: 20px;
+            
+            p {
+                opacity: 1;
+                font-weight: 900;
+                cursor: pointer;
+    
+                transition: opacity 0.2s ease-in-out;
+            }
+    
+            p:hover {
+                opacity: 0.9;
+            }
+        }   
+    
+        .button {
+            margin-top: 30px;
+        }
+    
+        .flexPassword {
+            @include flex();
+    
+            gap: 5px;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+    }
+
+    
+}

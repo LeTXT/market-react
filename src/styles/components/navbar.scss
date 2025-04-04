@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use '../../abstracts/' as *;
 
 .navbar {
     @include flex(row, space-between);
@@ -8,11 +8,18 @@
     width: 100%;
     height: 50px;
 
+    // .logo {
+    //     @include flex(row, center, end);
+
+    //     height: 100%;
+
+    // }
+
     .logo {
-        @include flex(row, center, end);
-
-        height: 100%;
-
+        transform: translateY(13px);
+        img {
+            width: 120px;
+        }
     }
 
     ul {
@@ -48,6 +55,8 @@
 
     .input {
         display: flex;
+
+        transform: translateY(10px);
     }
 }
 

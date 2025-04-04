@@ -9,12 +9,12 @@ import Footer from '../components/Footer'
 import GramsControl from '../components/GramsControl'
 import ItemCounterButton from '../components/ItemCounterButton'
 import AddButton from '../components/AddButton'
+import Card from '../components/Card'
 
 import { allProducts } from '../assets/productStore'
 import { PriceOption } from '../assets/types'
 
-import '../styles/product.scss'
-import Card from '../components/Card'
+import '../styles/pages/product.scss'
 
 
 function Product() {

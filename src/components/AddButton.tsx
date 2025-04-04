@@ -2,7 +2,6 @@ import { useBag } from '../hooks/useBag'
 
 import { ProductType } from '../assets/types'
 
-
 interface CardProps {
     item: ProductType & { selectedWeight: number | null }
     title: string

@@ -8,7 +8,7 @@ import IconButton from './IconButton'
 
 import ItemCounterButton from './ItemCounterButton'
 
-import '../styles/cardBag.scss'
+import '../styles/components/cardBag.scss'
 
 interface CardBagProps {
     path?: string
@@ -19,18 +19,26 @@ function CardBag({path = '.'}: CardBagProps) {
     const { bagItems, removeFromBag, updateQuantity } = useBag()
 
     const handleClick = (item: ProductType) => { 
-        removeFromBag((item.cardBagId || 0))
+        const cardItem = item.cardBagId ?? 0
+
+        removeFromBag(cardItem)
     }
 
-    const handleCounter = (item: ProductType & { selectedWeight: number | null }, n: number) => {
-        updateQuantity((item.cardBagId || 0), item.quantity + n)
-    }
+    const handleCounter = (item: ProductType, n: number) => {
+        const newQuantity = item.quantity + n;
+        const stock = item.availableStock ?? 0
+        const cardItem = item.cardBagId ?? 0
+        if (newQuantity >= 1 && newQuantity <= stock) {
+            updateQuantity(cardItem, newQuantity);
+        }
+    };
     
     return (
         <div className="cardBag">
             <div>
                 {
                     bagItems.map((item) => {
+
                         return (
                             <div key={item.cardBagId} className='cardBagItem'>
                                 <div className="imgContainer">
@@ -45,7 +53,7 @@ function CardBag({path = '.'}: CardBagProps) {
                                     handleCounterToDecrease={() => handleCounter(item, -1)} 
                                     handleCounterIncrease={() => handleCounter(item, 1)} 
                                     quantity={item.quantity}
-                                    availableStock={item.availableStock}
+                                    availableStock={(item.availableStock || 0)}
                                     />
                                     
                                 </div>            

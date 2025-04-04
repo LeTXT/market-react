@@ -6,7 +6,7 @@ import { ProductType } from '../assets/types'
 import AddButton from "./AddButton";
 import GramsControl from "./GramsControl";
 
-import '../styles/card.scss'
+import '../styles/components/card.scss'
 
 interface CardProps {
     array: ProductType[]

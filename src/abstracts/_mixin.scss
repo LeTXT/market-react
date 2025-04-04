@@ -1,3 +1,5 @@
+@use './color' as *;
+
 @mixin flex( $direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;
@@ -17,4 +19,18 @@
     border-top: 1px solid #D1D1D1;
     padding-top: 16px;
     margin-top: $margin-top;
+}
+
+@mixin border() {
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+}
+
+@mixin card() {
+    @include flex(column);
+    @include border();
+    
+    width: 300px;
+
+    padding: 16px;
 }

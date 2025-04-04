@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { PiHouseSimpleBold as Home, PiShoppingBagBold as BagIcon, PiUserBold as User } from 'react-icons/pi'
+import { PiShoppingBagBold as BagIcon, PiUserBold as User } from 'react-icons/pi'
+// import { PiHouseSimpleBold as Home, PiShoppingBagBold as BagIcon, PiUserBold as User } from 'react-icons/pi'
 
 import { onOff} from '../utils/showBag'
 
@@ -8,7 +9,7 @@ import Input from './Input'
 import Bag  from './Bag'
 import IconButton from './IconButton'
 
-import '../styles/navbar.scss'
+import '../styles/components/navbar.scss'
 
 interface NavigationBarProps {
     path?: string
@@ -26,7 +27,8 @@ function NavigationBar({ path = '.' }: NavigationBarProps) {
         <div className='navbar'>
             <div className='logo'>
                 <Link to='/'>
-                    <Home size={25} className='icon' />
+                    {/* <Home size={25} className='icon' /> */}
+                    <img src={path+'/logo.svg'} alt="" />
                 </Link>
             </div>
                 
@@ -37,7 +39,7 @@ function NavigationBar({ path = '.' }: NavigationBarProps) {
                         <IconButton onClick={handleClick} Icon={BagIcon} size={25} iconClass='bagUnity' />
                     </li>
                     
-                    <li><Link to='/login' >
+                    <li><Link to='/signIn' >
                         <User size={25} className='icon' />
                     </Link></li>
                 </ul>
