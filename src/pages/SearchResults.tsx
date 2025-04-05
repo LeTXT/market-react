@@ -3,10 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 import { ProductType } from '../assets/types'
 
-import NavigationBar from '../components/NavigationBar'
-import Input from '../components/Input'
 import Card from '../components/Card'
-import Footer from '../components/Footer'
 
 import { allProducts } from '../assets/productStore'
 
@@ -33,12 +30,9 @@ function SearchResults() {
 
     return (
         <div className='searchResults'>
-            <NavigationBar />
-            <Input />
 
-            <Card array={searchState} path='.'/>
+            <Card array={searchState} />
 
-            <Footer />
         </div>
     )
 }

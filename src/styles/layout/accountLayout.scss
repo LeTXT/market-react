@@ -1,0 +1,88 @@
+@use '../../abstracts/' as *;
+
+.accountLayout {
+    @include flex(row, start);
+
+    width: 100%;
+    max-width: 1336px;
+    height: 100%;
+
+    margin-top: 40px;
+
+    gap: 80px;
+
+    .greeting {
+        @include flex(column, start, start);
+
+        width: 100%;
+       
+        h2 {
+            color: $gray-color;
+
+            font-weight: 400;
+            font-size: 18px;
+
+            margin: 0;
+            padding: 0;
+
+            margin-bottom: 5px;
+        }
+        h3 {
+            font-weight: 400;
+
+            margin: 0;
+            padding: 0;
+
+            margin-bottom: 15px;
+        }
+    }
+
+    .containerNav {
+        @include flex(column, start, center);
+        height: 100%;
+
+        min-width: 118px;
+
+        ul {
+            @include flex(column, start, start);
+            height: 100%;
+
+            padding: 0;
+
+            li {
+                @include flex();
+
+                gap: 10px;
+
+                height: 50px;
+
+                list-style: none;
+
+                font-size: 14px;
+
+                .bar {
+                    height: 100%;
+                    width: 3px;
+                }
+                .selected {
+                    background-color: $orange-color;
+                }
+            }
+            li:hover {
+                opacity: 0.9;
+            }
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            button {
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+
+                margin-left: 9px;
+            }
+        }
+    }
+}

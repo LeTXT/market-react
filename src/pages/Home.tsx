@@ -1,7 +1,5 @@
-import NavigationBar from '../components/NavigationBar'
-import Input from '../components/Input'
+
 import Card from '../components/Card'
-import Footer from '../components/Footer'
 
 import { allProducts } from '../assets/productStore'
 
@@ -10,11 +8,6 @@ import '../styles/pages/home.scss'
 function Home () {
     return (
         <div className='home'>
-            
-            <NavigationBar />
-            <Input />
-          
-            
             <div className='containerImg'>
                 <img src="./capa.png" alt="Real Café" />
             </div>
@@ -27,7 +20,6 @@ function Home () {
                 {/* <Card array={allProducts.filter(product => product.tag.includes('sale'))} /> */}
             </div>
 
-            <Footer />
         </div>
     )
 }

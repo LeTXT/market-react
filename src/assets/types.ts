@@ -1,22 +1,22 @@
 export interface PriceOption {
-    id: number;
-    grams: number;
-    price: number;
-    availableStock: number;
-  }
+  id: number;
+  grams: number;
+  price: number;
+  availableStock: number;
+}
 
 export interface ProductType {
-    id: number;
-    img: string;
-    title: string;
-    description: string;
-    quantity: number;
-    priceOptions: PriceOption[];
-    tag: string[];
-    selectedWeight?: number;
-    selectedPrice?: number;
-    cardBagId?: number
-    availableStock?: number
+  id: number;
+  img: string;
+  title: string;
+  description: string;
+  quantity: number;
+  priceOptions: PriceOption[];
+  tag: string[];
+  selectedWeight?: number;
+  selectedPrice?: number;
+  cardBagId?: number
+  availableStock?: number
 }
 
 // export interface ProductBagType {

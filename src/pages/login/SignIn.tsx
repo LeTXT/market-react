@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { arrayObj } from '../../assets/registrations'
 
@@ -8,14 +8,20 @@ import AnotherMethod from "../../components/login/AnotherMethod"
 
 import '../../styles/login/signIn.scss'
 
-function SingIn() {
-    const [errorLogin, setErrorLogin] = useState<string>('')
-    const [email, setemail] = useState<string>('')
+function SignIn() {
+    const [errorLogin, setErrorLogin] = useState<string | null>(null)
+    const [email, setEmail] = useState<string>('')
     const [password, setPassword] = useState<string>('')
 
     const navigate = useNavigate();
 
-    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    useEffect(() => {
+        if (localStorage.getItem("authKey")) {
+            navigate("/account");
+        }
+    }, [])
+
+    const isEmailValid = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)
     const isPasswordValid = password.length >= 8
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -26,13 +32,13 @@ function SingIn() {
             password: password
         }
 
-        const index = arrayObj.findIndex(obj =>
-            obj.email === newObj.email && obj.password === newObj.password
-        )
+        const user = arrayObj.find(obj => obj.email === newObj.email && obj.password === newObj.password)
 
-        if (index !== -1) {
-            setErrorLogin('')
-            navigate("/home")
+
+        if (user && user.key) {
+            localStorage.setItem('authKey', user.key);
+            setErrorLogin('');
+            navigate("/account");
         }
         else {
             setErrorLogin('Email ou senha inválidos')
@@ -43,9 +49,13 @@ function SingIn() {
     return (
         <div className='singIn'>
             <div className="singInContainer fade-in-up">
-                <div className="errorLogin">
-                    <p>{errorLogin}</p>
-                </div>
+                {
+                    errorLogin && (
+                        <div className="errorLogin">
+                            <p>{errorLogin}</p>
+                        </div>
+                    )
+                }
                 <div>
                     <h1>Faça login para continuar</h1>
                 </div>
@@ -55,7 +65,7 @@ function SingIn() {
                         errorMessage='Email inválida'
                         placeholder='Email'
                         state={email}
-                        setState={setemail}
+                        setState={setEmail}
                         isValid={isEmailValid}
                     />
 
@@ -92,7 +102,7 @@ function SingIn() {
                     <Link to={'/home'}>
                         <p>Página inicial</p>
                     </Link>
-                    
+
                 </div>
             </div>
 
@@ -100,4 +110,4 @@ function SingIn() {
     )
 }
 
-export default SingIn
+export default SignIn

@@ -10,10 +10,9 @@ import '../styles/components/card.scss'
 
 interface CardProps {
     array: ProductType[]
-    path?: string
 }
 
-function Card({ array, path = '.' }: CardProps) {
+function Card({ array}: CardProps) {
     const [selectedWeights, setSelectedWeights] = useState<{ [key: number]: number }>({});
 
     const navigate = useNavigate()
@@ -36,7 +35,7 @@ function Card({ array, path = '.' }: CardProps) {
                             onClick={() => navigate(`/product/${item.id}`)}
                         >
                             <div className='imgContainer'>
-                                <img src={`${path}${item.img}`} alt={item.title} />
+                                <img src={item.img} alt={item.title} />
                             </div>
                             <p className='title'>{item.title}</p>
                         </div>

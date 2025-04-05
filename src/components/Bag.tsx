@@ -11,10 +11,9 @@ import '../styles/components/bag.scss'
 interface BagProps {
     state: boolean
     setState: React.Dispatch<React.SetStateAction<boolean>>
-    path?: string
 }
 
-function Bag ({state, setState, path}: BagProps) {
+function Bag ({state, setState}: BagProps) {
     const { bagItems, getTotalPrice } = useBag()
 
     const handleClick = () => {
@@ -25,7 +24,7 @@ function Bag ({state, setState, path}: BagProps) {
         <div className='bag'>
             <div className={toggleClass(state, 'bag-content')}>
                 <div className='containerHeadAndCard'>
-                    <div className='header'>
+                    <div className='bagHeader'>
                         <div className='bagQuantity'>
                             <p>MINHA SACOLA</p>
                             <div className='pharagraph'>
@@ -38,7 +37,7 @@ function Bag ({state, setState, path}: BagProps) {
                     </div>
                     
 
-                    <CardBag path={path}/>
+                    <CardBag />
                 </div>
                 
 

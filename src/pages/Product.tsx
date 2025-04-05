@@ -2,10 +2,6 @@ import { useEffect, useState } from 'react'
 
 import { useParams } from 'react-router-dom'
 
-import NavigationBar from '../components/NavigationBar'
-import Input from '../components/Input'
-import Footer from '../components/Footer'
-
 import GramsControl from '../components/GramsControl'
 import ItemCounterButton from '../components/ItemCounterButton'
 import AddButton from '../components/AddButton'
@@ -21,8 +17,6 @@ function Product() {
     const [selectedWeights, setSelectedWeights] = useState<{ [key: number]: number }>({});
     const [quantity, setQuantity] = useState<number>(1)
     const [selectedPrice, setSelectedPrice] = useState<number>(0)
-
-    const path = '/market-react'
 
     const { id } = useParams()
 
@@ -66,12 +60,10 @@ function Product() {
 
         return (
             <div className='product'>
-                <NavigationBar path={path} />
-                <Input />
 
                 <div className='productContainer'>
                     <div className='productImg'>
-                        <img src={path+product.img} alt={product.title} />
+                        <img src={product.img} alt={product.title} />
                     </div>
 
                     <div className='productInfo'>
@@ -110,9 +102,7 @@ function Product() {
 
                 </div>
 
-                <Card array={allProducts.filter(item => item.id !== productId).slice(0, 3)} path={path} />
-
-                <Footer path={path} />
+                <Card array={allProducts.filter(item => item.id !== productId).slice(0, 3)} />
 
             </div>
         )

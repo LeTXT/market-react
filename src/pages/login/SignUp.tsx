@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from "react-router-dom";
+import { v4 as uuidv4 } from 'uuid';
+
 
 import CustomInput from '../../components/login/CustomInput'
 import SendButton from "../../components/login/SendButton"
@@ -26,13 +28,14 @@ function SignUp() {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
 
-        const newObj = {
+        const newUser = {
             user: user,
             email: email,
-            password: password
+            password: password,
+            key: uuidv4()
         }
 
-        arrayObj.push(newObj)
+        arrayObj.push(newUser)
 
         navigate("/signIn")
     }
