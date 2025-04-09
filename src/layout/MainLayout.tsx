@@ -14,9 +14,11 @@ function MainLayout() {
                 <Input />
             </div>
 
+            <div className="space"></div>
             <Outlet />
 
             <Footer />
+
         </div>
     )
 }

@@ -38,10 +38,10 @@
     }
 
     .containerNav {
-        @include flex(column, start, center);
+        @include flex(column, start, start);
         height: 100%;
 
-        min-width: 118px;
+        min-width: 140px;
 
         ul {
             @include flex(column, start, start);
@@ -52,7 +52,7 @@
             li {
                 @include flex();
 
-                gap: 10px;
+                gap: 22px;
 
                 height: 50px;
 
@@ -60,12 +60,13 @@
 
                 font-size: 14px;
 
+                color: $gray-color;
+
+                cursor: pointer;
+
                 .bar {
                     height: 100%;
                     width: 3px;
-                }
-                .selected {
-                    background-color: $orange-color;
                 }
             }
             li:hover {
@@ -75,13 +76,22 @@
                 text-decoration: none;
                 color: inherit;
             }
+            .selected {
+                color: black;
+
+                .bar {
+                    background-color: $orange-color;
+                }
+            }
 
             button {
+                color: $gray-color;
+
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
 
-                margin-left: 9px;
+                margin-left: 18px;
             }
         }
     }

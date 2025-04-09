@@ -12,6 +12,18 @@
     .header {
         @include flex(column);
 
+        position: fixed;
+        top: 0;
+
+        padding: 5px;
+
+        background-color: white;
+
         width: 100%;
+
+        z-index: 10;
+    }
+    .space {
+        margin: 35px;
     }
 }

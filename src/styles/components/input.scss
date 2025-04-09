@@ -2,7 +2,7 @@
 
 .input {
     @include flex();
-    @include border();
+    @include border(); 
 
     gap: 5px;
 
